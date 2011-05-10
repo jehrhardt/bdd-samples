@@ -15,6 +15,7 @@
     <org.codehaus.groovy.version>1.7.10</org.codehaus.groovy.version>
     <junit.version>4.8.2</junit.version>
     <scala.version>2.9.0</scala.version>
+    <cuke4duke.version>0.4.3</cuke4duke.version>
   </properties>
 
   <dependencyManagement>
@@ -73,6 +74,7 @@
     <module>mockito-tests</module>
     <module>spock-tests</module>
     <module>scala-tests</module>
+    <module>cucumber-tests</module>
   </modules>
 
   <repositories>
@@ -83,6 +85,20 @@
       <url>http://scala-tools.org/repo-releases</url>
     </repository>
 
+    <repository>
+      <id>cukes</id>
+      <url>http://cukes.info/maven</url>
+    </repository>
+
   </repositories>
+
+  <pluginRepositories>
+
+    <pluginRepository>
+      <id>cukes</id>
+      <url>http://cukes.info/maven</url>
+    </pluginRepository>
+
+  </pluginRepositories>
 
 </project>

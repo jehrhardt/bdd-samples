@@ -12,6 +12,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <org.codehaus.groovy.version>1.7.10</org.codehaus.groovy.version>
+    <junit.version>4.8.2</junit.version>
   </properties>
 
   <dependencyManagement>
@@ -21,13 +23,13 @@
       <dependency>
         <groupId>org.codehaus.groovy</groupId>
         <artifactId>groovy-all</artifactId>
-        <version>1.7.10</version>
+        <version>${org.codehaus.groovy.version}</version>
       </dependency>
 
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.8.2</version>
+        <version>${junit.version}</version>
       </dependency>
 
     </dependencies>
@@ -63,6 +65,7 @@
     <module>calculator</module>
     <module>mockito-tests</module>
     <module>spock-tests</module>
+    <module>scala-tests</module>
   </modules>
 
 </project>

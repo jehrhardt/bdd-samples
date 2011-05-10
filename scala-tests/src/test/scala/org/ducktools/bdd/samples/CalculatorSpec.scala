@@ -17,14 +17,14 @@
  */
 package org.ducktools.bdd.samples
 
-import java.util.List
+import org.scalatest.FlatSpec
+import org.scalatest.matchers.ShouldMatchers
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
-class Calculator {
+class CalculatorSpec extends FlatSpec with ShouldMatchers {
 
-  List<Integer> primeNumbers(int number) {
-    null
+  it should "calculate the prime factors of 6" in {
   }
 }

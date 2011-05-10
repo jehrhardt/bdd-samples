@@ -15,18 +15,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.bdd.samples;
+package org.ducktools.bdd.samples
 
-import org.junit.Test;
+import org.junit.Test
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
-public class CalculatorTest {
+class CalculatorTest {
 
   @Test
-  public void itShouldCalculateThePrimeFactorsOfSix() {
-
+  void itShouldCalculateThePrimeFactorsOfSix() {
   }
-
 }

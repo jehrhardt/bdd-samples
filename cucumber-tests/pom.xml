@@ -16,6 +16,12 @@
   <dependencies>
 
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>calculator</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>cuke4duke</groupId>
       <artifactId>cuke4duke</artifactId>
       <version>${cuke4duke.version}</version>

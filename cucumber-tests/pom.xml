@@ -45,27 +45,10 @@
         <version>${cuke4duke.version}</version>
         <configuration>
           <jvmArgs>
-            <jvmArg>-Dcuke4duke.objectFactory=cuke4duke.internal.jvmclass.PicoFactory</jvmArg>
             <jvmArg>-Dfile.encoding=UTF-8</jvmArg>
           </jvmArgs>
           <cucumberArgs>
-            <cucumberArg>--backtrace</cucumberArg>
-            <cucumberArg>--color</cucumberArg>
-            <cucumberArg>--verbose</cucumberArg>
-            <cucumberArg>--format</cucumberArg>
-            <cucumberArg>pretty</cucumberArg>
-            <cucumberArg>--format</cucumberArg>
-            <cucumberArg>junit</cucumberArg>
-            <cucumberArg>--out</cucumberArg>
-            <cucumberArg>target/surefire-reports</cucumberArg>
-            <cucumberArg>--format</cucumberArg>
-            <cucumberArg>usage</cucumberArg>
-            <cucumberArg>--out</cucumberArg>
-            <cucumberArg>target/usage.txt</cucumberArg>
-            <cucumberArg>--require</cucumberArg>
             <cucumberArg>${basedir}/target/test-classes</cucumberArg>
-            <cucumberArg>--require</cucumberArg>
-            <cucumberArg>${basedir}/src/test/ruby</cucumberArg>
           </cucumberArgs>
           <gems>
             <gem>install cuke4duke --version ${cuke4duke.version}</gem>

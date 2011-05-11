@@ -28,6 +28,12 @@
     </dependency>
 
     <dependency>
+      <groupId>org.codehaus.groovy</groupId>
+      <artifactId>groovy-all</artifactId>
+      <version>${org.codehaus.groovy.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
@@ -47,9 +53,6 @@
           <jvmArgs>
             <jvmArg>-Dfile.encoding=UTF-8</jvmArg>
           </jvmArgs>
-          <cucumberArgs>
-            <cucumberArg>${basedir}/target/test-classes</cucumberArg>
-          </cucumberArgs>
           <gems>
             <gem>install cuke4duke --version ${cuke4duke.version}</gem>
           </gems>
@@ -60,6 +63,18 @@
             <phase>integration-test</phase>
             <goals>
               <goal>cucumber</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.gmaven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
             </goals>
           </execution>
         </executions>

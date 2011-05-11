@@ -1,7 +1,6 @@
 Feature: Prime Factor Calculation
 
 Scenario: it should calculate the prime factors of 6
-  Given I have entered 3 into the calculator
-  And I have entered 2 into the calculator
-  When I press divide
-  Then the stored result should be 1.5
+  Given a calculator
+  When prime factors of 6 are calculated
+  Then [2, 3] are the prime factors

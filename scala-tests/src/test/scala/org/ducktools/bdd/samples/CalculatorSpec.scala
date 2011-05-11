@@ -17,14 +17,20 @@
  */
 package org.ducktools.bdd.samples
 
+import org.scalatest.junit.JUnitRunner
+import org.junit.runner.RunWith
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
+import scala.collection.JavaConversions._
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
+@RunWith(classOf[JUnitRunner])
 class CalculatorSpec extends FlatSpec with ShouldMatchers {
 
   it should "calculate the prime factors of 6" in {
+    val calculator = new Calculator()
+    (calculator primeFactors 6).toArray should equal (List(2, 3).toArray)
   }
 }

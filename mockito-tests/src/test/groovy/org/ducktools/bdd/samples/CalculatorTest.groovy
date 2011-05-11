@@ -17,6 +17,10 @@
  */
 package org.ducktools.bdd.samples
 
+import static org.junit.Assert.*
+import static org.mockito.Matchers.*
+import static org.mockito.Mockito.*
+
 import org.junit.Test
 
 /**
@@ -25,6 +29,9 @@ import org.junit.Test
 class CalculatorTest {
 
   @Test
-  void itShouldCalculateThePrimeFactorsOfSix() {
+  void itShouldCalculateThePrimeFactorsOf6() {
+    Calculator calculator = mock(Calculator)
+    when(calculator.primeFactors(6)).thenReturn([2, 3])
+    assertEquals([2, 3], calculator.primeFactors(6))
   }
 }

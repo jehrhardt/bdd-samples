@@ -24,7 +24,17 @@ import java.util.List
  */
 class Calculator {
 
-  List<Integer> primeNumbers(int number) {
-    null
+  List<Integer> primeFactors(int number) {
+    def n = number
+    def factors = []
+
+    for (int i = 2; i <= n; i++) {
+      while (n % i == 0) {
+        factors.add(i)
+        n /= i
+      }
+    }
+
+    factors
   }
 }

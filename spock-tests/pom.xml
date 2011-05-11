@@ -16,6 +16,12 @@
   <dependencies>
 
     <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>calculator</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
       <groupId>org.codehaus.groovy</groupId>
       <artifactId>groovy-all</artifactId>
       <version>${org.codehaus.groovy.version}</version>

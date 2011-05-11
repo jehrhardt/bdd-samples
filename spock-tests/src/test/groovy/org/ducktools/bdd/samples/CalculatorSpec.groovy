@@ -26,5 +26,13 @@ import spock.lang.Specification
 class CalculatorSpec extends Specification {
 
   def "it should calculate the prime factors of 6"() {
+    given:
+    def calculator = new Calculator()
+
+    when:
+    def result = calculator.primeFactors(6)
+
+    then:
+    [2, 3]== result
   }
 }

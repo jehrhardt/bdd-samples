@@ -15,23 +15,28 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.bdd.samples
+package org.ducktools.bdd.samples;
 
-import static org.junit.Assert.*
-import static org.mockito.Matchers.*
-import static org.mockito.Mockito.*
+import static java.util.Arrays.asList;
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Matchers.eq;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-import org.junit.Test
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
-class CalculatorTest {
+@RunWith(MockitoJUnitRunner.class)
+public class CalculatorTest {
 
   @Test
-  void itShouldCalculateThePrimeFactorsOf6() {
-    Calculator calculator = mock(Calculator)
-    when(calculator.primeFactors(6)).thenReturn([2, 3])
-    assertEquals([2, 3], calculator.primeFactors(6))
+  public void itShouldCalculateThePrimeFactorsOf6() {
+    Calculator calculator = mock(Calculator.class);
+    when(calculator.primeFactors(eq(6))).thenReturn(asList(2, 3));
+    assertEquals(asList(2, 3), calculator.primeFactors(6));
   }
 }

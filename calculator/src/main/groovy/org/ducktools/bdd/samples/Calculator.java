@@ -15,26 +15,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.bdd.samples
+package org.ducktools.bdd.samples;
 
-import java.util.List
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
-class Calculator {
+public class Calculator {
 
-  List<Integer> primeFactors(int number) {
-    def n = number
-    def factors = []
+  public List<Integer> primeFactors(int number) {
+    int n = number;
+    List<Integer> factors = new ArrayList<Integer>();
 
     for (int i = 2; i <= n; i++) {
       while (n % i == 0) {
-        factors.add(i)
-        n /= i
+        factors.add(i);
+        n /= i;
       }
     }
 
-    factors
+    return factors;
   }
 }

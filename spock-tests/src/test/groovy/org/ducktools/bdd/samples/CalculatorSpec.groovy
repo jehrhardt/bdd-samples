@@ -17,22 +17,44 @@
  */
 package org.ducktools.bdd.samples
 
-import spock.lang.Specification
+import org.ducktools.bdd.samples.lib.NumberNormalizer
 
+import spock.lang.Specification
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
 class CalculatorSpec extends Specification {
 
-  def "it should calculate the prime factors of 6"() {
-    given:
-    def calculator = new Calculator()
+    def "it should calculate the prime factors of integers"() {
+        given: "a calculator"
+        def calculator = new Calculator()
 
-    when:
-    def result = calculator.primeFactors(6)
+        when: "the primefactors of ${number} are calculated"
+        def result = calculator.primeFactors(number)
 
-    then:
-    [2, 3]== result
-  }
+        then: "the result is ${primeFactors}"
+        primeFactors == result
+
+        where:
+        number << [1, 2, 6, 7]
+        primeFactors << [[], [2], [2, 3], [7]]
+    }
+
+    def "it should calculate the prime factors of doubles"() {
+        given: "a calculator and NumberNormalizer"
+        NumberNormalizer normalizer = Mock()
+        normalizer.asInteger(_) >> {(Integer) number}
+        def calculator = new Calculator(normalizer)
+
+        when: "the primefactors of ${number} are calculated"
+        def result = calculator.primeFactors(number)
+
+        then: "the result is ${primeFactors}"
+        primeFactors == result
+
+        where:
+        number << [1.0, 2.0, 6.0, 7.0]
+        primeFactors << [[], [2], [2, 3], [7]]
+    }
 }

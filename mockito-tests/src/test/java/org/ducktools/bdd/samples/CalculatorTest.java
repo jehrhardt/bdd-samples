@@ -19,12 +19,15 @@ package org.ducktools.bdd.samples;
 
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.eq;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
+import java.util.List;
+
+import org.ducktools.bdd.samples.lib.NumberNormalizer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 /**
@@ -33,10 +36,31 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class CalculatorTest {
 
+  @Mock
+  NumberNormalizer normalizer;
+
   @Test
-  public void itShouldCalculateThePrimeFactorsOf6() {
-    Calculator calculator = mock(Calculator.class);
-    when(calculator.primeFactors(eq(6))).thenReturn(asList(2, 3));
-    assertEquals(asList(2, 3), calculator.primeFactors(6));
+  public void it_should_calculate_the_prime_factors_of_6() {
+    // given: a calculator
+    Calculator calculator = new Calculator();
+
+    // when: prime factors of 6 are calculated
+    List<Integer> result = calculator.primeFactors(6);
+
+    // then: [2, 3] is the result
+    assertEquals(asList(2, 3), result);
+  }
+
+  @Test
+  public void it_should_calculate_the_prime_factors_of_6_as_double() {
+    // given: a calculator with a NumberNormalizer
+    given(normalizer.asInteger(eq(6.0))).willReturn(6);
+    Calculator calculator = new Calculator(normalizer);
+
+    // when: prime factors of 6.0 are calculated
+    List<Integer> result = calculator.primeFactors(6.0);
+
+    // then: [2, 3] is the result
+    assertEquals(asList(2, 3), result);
   }
 }

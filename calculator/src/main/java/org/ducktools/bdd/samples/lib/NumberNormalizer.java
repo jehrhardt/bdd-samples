@@ -15,43 +15,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.ducktools.bdd.samples;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import org.ducktools.bdd.samples.lib.NumberNormalizer;
+package org.ducktools.bdd.samples.lib;
 
 /**
  * @author <a href="https://github.com/derjan1982">Jan Ehrhardt</a>
  */
-public class Calculator {
+public interface NumberNormalizer {
 
-  private NumberNormalizer normalizer;
+  int asInteger(Number number);
 
-  public Calculator() {
-
-  }
-
-  public Calculator(NumberNormalizer normalizer) {
-    this.normalizer = normalizer;
-  }
-
-  public List<Integer> primeFactors(int number) {
-    int n = number;
-    List<Integer> factors = new ArrayList<Integer>();
-
-    for (int i = 2; i <= n; i++) {
-      while (n % i == 0) {
-        factors.add(i);
-        n /= i;
-      }
-    }
-
-    return factors;
-  }
-
-  public List<Integer> primeFactors(double number) {
-    return primeFactors(normalizer.asInteger(number));
-  }
 }

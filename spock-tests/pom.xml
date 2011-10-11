@@ -80,6 +80,8 @@
 
     </plugins>
 
+    <testSourceDirectory>src/test/groovy</testSourceDirectory>
+
   </build>
 
 </project>
